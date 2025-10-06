@@ -1,5 +1,5 @@
 // Proxy para tu Apps Script Web App
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxJ0is7kpVlpOINkrRkvRYzlbvZPovNELFjduemEuk0-6mYqx6uqUcPv2ydLSER11A/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyGjB1tWcnEnNBuOcNxUIUGA_xysqxRB-GXVdNkVVlpFP6J1adH7W48H-NKvPnxR3i4/exec';
 
 export default async function handler(req, res) {
   try {
