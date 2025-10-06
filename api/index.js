@@ -1,33 +1,22 @@
-// Proxy para tu Apps Script Web App
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyGjB1tWcnEnNBuOcNxUIUGA_xysqxRB-GXVdNkVVlpFP6J1adH7W48H-NKvPnxR3i4/exec';
-
-export default async function handler(req, res) {
-  try {
-    const qs = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
-    const target = APPS_SCRIPT_URL + qs;
-
-    const init = {
-      method: req.method,
-      headers: Object.fromEntries(
-        Object.entries(req.headers).filter(([k]) =>
-          !['host', 'content-length', 'connection', 'accept-encoding'].includes(k.toLowerCase())
-        )
-      ),
-      body: (req.method === 'GET' || req.method === 'HEAD') ? undefined : req
-    };
-
-    const r = await fetch(target, init);
-    res.status(r.status);
-
-    r.headers.forEach((v, k) => {
-      if (!['content-security-policy', 'content-length'].includes(k.toLowerCase())) {
-        res.setHeader(k, v);
-      }
-    });
-
-    const buf = Buffer.from(await r.arrayBuffer());
-    res.send(buf);
-  } catch (e) {
-    res.status(502).send('Proxy error: ' + (e?.message || e));
-  }
-}
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario | Global Unity Partners</title>
+  <style>
+    html, body { height: 100%; margin: 0; background:#f6f9fc; }
+    .wrap { height: 100%; display: flex; }
+    iframe { border: 0; width: 100%; height: 100%; background: white; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <iframe
+      src="https://script.google.com/macros/s/AKfycbyGjB1tWcnEnNBuOcNxUIUGA_xysqxRB-GXVdNkVVlpFP6J1adH7W48H-NKvPnxR3i4/exec"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</body>
+</html>
