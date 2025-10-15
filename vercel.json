@@ -1,6 +1,10 @@
 {
-  "version": 2,
-  "routes": [
-    { "src": "/(.*)", "dest": "https://script.google.com/macros/s/AKfycbx5kDzzVXrfzAdA22U4AOgzkTwqL03LVIRThg35FCryufOwZDWFb8VFSAC6vmDtfRwD/exec" }
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://script.google.com/macros/s/AKfycbx5kDzzVXrfzAdA22U4AOgzkTwqL03LVIRThg35FCryufOwZDWFb8VFSAC6vmDtfRwD/exec",
+      "permanent": false
+    }
   ]
 }
+
